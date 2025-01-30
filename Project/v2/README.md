@@ -18,3 +18,5 @@
 - GPT API 를 활용해 DataBase Metadata 를 바탕으로 모델을 평가할 Data 만들기
 - GPT API 를 활용해 DataBase Metadata 를 바탕으로 학습 데이터 생성하기
 - 생성한 학습 데이터로 파인튜닝을 통해 모델 성능 높이기
+
+  * 현재 EC2 인스턴스는 종료한 상태입니다.
