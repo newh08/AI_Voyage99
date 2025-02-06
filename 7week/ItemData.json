@@ -1,0 +1,1762 @@
+[
+  {
+    "question": "List all customers.",
+    "label": "SELECT * FROM customers;"
+  },
+  {
+    "question": "List all addresses.",
+    "label": "SELECT * FROM addresses;"
+  },
+  {
+    "question": "List all orders.",
+    "label": "SELECT * FROM orders;"
+  },
+  {
+    "question": "List all order items.",
+    "label": "SELECT * FROM order_items;"
+  },
+  {
+    "question": "Show first_name and last_name of all customers.",
+    "label": "SELECT first_name, last_name FROM customers;"
+  },
+  {
+    "question": "Find the customer with customer_id = 1.",
+    "label": "SELECT * FROM customers WHERE customer_id = 1;"
+  },
+  {
+    "question": "Find the customer with customer_id = 10.",
+    "label": "SELECT * FROM customers WHERE customer_id = 10;"
+  },
+  {
+    "question": "Find customers with email ending in '@gmail.com'.",
+    "label": "SELECT * FROM customers WHERE email LIKE '%@gmail.com';"
+  },
+  {
+    "question": "Find orders placed by the customer with customer_id = 5.",
+    "label": "SELECT * FROM orders WHERE customer_id = 5;"
+  },
+  {
+    "question": "List orders with total_amount greater than 1000.",
+    "label": "SELECT * FROM orders WHERE total_amount > 1000;"
+  },
+  {
+    "question": "Find orders with status 'completed'.",
+    "label": "SELECT * FROM orders WHERE status = 'completed';"
+  },
+  {
+    "question": "Find orders with status 'pending'.",
+    "label": "SELECT * FROM orders WHERE status = 'pending';"
+  },
+  {
+    "question": "List order items for order_id = 20.",
+    "label": "SELECT * FROM order_items WHERE order_id = 20;"
+  },
+  {
+    "question": "Show product_id and quantity for order items with quantity > 5.",
+    "label": "SELECT product_id, quantity FROM order_items WHERE quantity > 5;"
+  },
+  {
+    "question": "Calculate the total price for each order item (quantity * price).",
+    "label": "SELECT order_item_id, quantity * price AS total_price FROM order_items;"
+  },
+  {
+    "question": "List customers along with their addresses.",
+    "label": "SELECT c.first_name, c.last_name, a.street, a.city, a.state FROM customers c JOIN addresses a ON c.address_id = a.address_id;"
+  },
+  {
+    "question": "List orders with corresponding customer names.",
+    "label": "SELECT o.order_id, o.order_date, c.first_name, c.last_name FROM orders o JOIN customers c ON o.customer_id = c.customer_id;"
+  },
+  {
+    "question": "List order items along with their order dates.",
+    "label": "SELECT oi.order_item_id, oi.order_id, o.order_date FROM order_items oi JOIN orders o ON oi.order_id = o.order_id;"
+  },
+  {
+    "question": "Count the total number of customers.",
+    "label": "SELECT COUNT(*) FROM customers;"
+  },
+  {
+    "question": "Count the total number of orders.",
+    "label": "SELECT COUNT(*) FROM orders;"
+  },
+  {
+    "question": "Count the total number of order items.",
+    "label": "SELECT COUNT(*) FROM order_items;"
+  },
+  {
+    "question": "Find the average total_amount of orders.",
+    "label": "SELECT AVG(total_amount) FROM orders;"
+  },
+  {
+    "question": "Find the maximum total_amount from orders.",
+    "label": "SELECT MAX(total_amount) FROM orders;"
+  },
+  {
+    "question": "Find the minimum total_amount from orders.",
+    "label": "SELECT MIN(total_amount) FROM orders;"
+  },
+  {
+    "question": "Group orders by status and count them.",
+    "label": "SELECT status, COUNT(*) AS count FROM orders GROUP BY status;"
+  },
+  {
+    "question": "Group customers by address_id and count them.",
+    "label": "SELECT address_id, COUNT(*) AS count FROM customers GROUP BY address_id;"
+  },
+  {
+    "question": "Group order items by product_id and count occurrences.",
+    "label": "SELECT product_id, COUNT(*) AS count FROM order_items GROUP BY product_id;"
+  },
+  {
+    "question": "List orders sorted by order_date in ascending order.",
+    "label": "SELECT * FROM orders ORDER BY order_date ASC;"
+  },
+  {
+    "question": "List orders sorted by order_date in descending order.",
+    "label": "SELECT * FROM orders ORDER BY order_date DESC;"
+  },
+  {
+    "question": "List customers sorted by last_name in ascending order.",
+    "label": "SELECT * FROM customers ORDER BY last_name ASC;"
+  },
+  {
+    "question": "List addresses sorted by city in ascending order.",
+    "label": "SELECT * FROM addresses ORDER BY city ASC;"
+  },
+  {
+    "question": "Find orders placed in the year 2022.",
+    "label": "SELECT * FROM orders WHERE YEAR(order_date) = 2022;"
+  },
+  {
+    "question": "Find orders placed in January 2023.",
+    "label": "SELECT * FROM orders WHERE MONTH(order_date) = 1 AND YEAR(order_date) = 2023;"
+  },
+  {
+    "question": "List customers with phone numbers starting with '555'.",
+    "label": "SELECT * FROM customers WHERE phone_number LIKE '555%';"
+  },
+  {
+    "question": "Find addresses in the state 'NY'.",
+    "label": "SELECT * FROM addresses WHERE state = 'NY';"
+  },
+  {
+    "question": "List orders with total_amount between 100 and 500.",
+    "label": "SELECT * FROM orders WHERE total_amount BETWEEN 100 AND 500;"
+  },
+  {
+    "question": "Show the sum of total_amount for all orders.",
+    "label": "SELECT SUM(total_amount) FROM orders;"
+  },
+  {
+    "question": "Show the sum of quantity for order items of order_id = 15.",
+    "label": "SELECT SUM(quantity) FROM order_items WHERE order_id = 15;"
+  },
+  {
+    "question": "List customers with first_name 'John'.",
+    "label": "SELECT * FROM customers WHERE first_name = 'John';"
+  },
+  {
+    "question": "List customers with last_name 'Doe'.",
+    "label": "SELECT * FROM customers WHERE last_name = 'Doe';"
+  },
+  {
+    "question": "Find customers whose first_name starts with 'A'.",
+    "label": "SELECT * FROM customers WHERE first_name LIKE 'A%';"
+  },
+  {
+    "question": "Find customers whose last_name ends with 'son'.",
+    "label": "SELECT * FROM customers WHERE last_name LIKE '%son';"
+  },
+  {
+    "question": "Join customers and orders to show customer email and order total.",
+    "label": "SELECT c.email, o.total_amount FROM customers c JOIN orders o ON c.customer_id = o.customer_id;"
+  },
+  {
+    "question": "Join orders and order_items to calculate total order value per order.",
+    "label": "SELECT o.order_id, SUM(oi.quantity * oi.price) AS order_value FROM orders o JOIN order_items oi ON o.order_id = oi.order_id GROUP BY o.order_id;"
+  },
+  {
+    "question": "List order items with quantity less than 3.",
+    "label": "SELECT * FROM order_items WHERE quantity < 3;"
+  },
+  {
+    "question": "List customers with non-null phone numbers.",
+    "label": "SELECT * FROM customers WHERE phone_number IS NOT NULL;"
+  },
+  {
+    "question": "List addresses with zip_code '10001'.",
+    "label": "SELECT * FROM addresses WHERE zip_code = '10001';"
+  },
+  {
+    "question": "Find orders placed on '2023-06-15'.",
+    "label": "SELECT * FROM orders WHERE order_date = '2023-06-15';"
+  },
+  {
+    "question": "List orders with status 'cancelled'.",
+    "label": "SELECT * FROM orders WHERE status = 'cancelled';"
+  },
+  {
+    "question": "List orders with status 'processing'.",
+    "label": "SELECT * FROM orders WHERE status = 'processing';"
+  },
+  {
+    "question": "Find the customer who placed the highest number of orders.",
+    "label": "SELECT customer_id, COUNT(*) AS order_count FROM orders GROUP BY customer_id ORDER BY order_count DESC LIMIT 1;"
+  },
+  {
+    "question": "Find the order with the highest total_amount.",
+    "label": "SELECT * FROM orders ORDER BY total_amount DESC LIMIT 1;"
+  },
+  {
+    "question": "Find the order with the lowest total_amount.",
+    "label": "SELECT * FROM orders ORDER BY total_amount ASC LIMIT 1;"
+  },
+  {
+    "question": "List orders along with the number of items in each order.",
+    "label": "SELECT o.order_id, COUNT(oi.order_item_id) AS item_count FROM orders o JOIN order_items oi ON o.order_id = oi.order_id GROUP BY o.order_id;"
+  },
+  {
+    "question": "List the average price of items per order.",
+    "label": "SELECT order_id, AVG(price) AS avg_price FROM order_items GROUP BY order_id;"
+  },
+  {
+    "question": "List orders along with their order date and total_amount.",
+    "label": "SELECT order_id, order_date, total_amount FROM orders;"
+  },
+  {
+    "question": "Show all customers from 'Los Angeles'.",
+    "label": "SELECT c.* FROM customers c JOIN addresses a ON c.address_id = a.address_id WHERE a.city = 'Los Angeles';"
+  },
+  {
+    "question": "Show all orders for customers living in 'Chicago'.",
+    "label": "SELECT o.* FROM orders o JOIN customers c ON o.customer_id = c.customer_id JOIN addresses a ON c.address_id = a.address_id WHERE a.city = 'Chicago';"
+  },
+  {
+    "question": "List the most recent order for each customer.",
+    "label": "SELECT o1.* FROM orders o1 WHERE o1.order_date = (SELECT MAX(o2.order_date) FROM orders o2 WHERE o2.customer_id = o1.customer_id);"
+  },
+  {
+    "question": "Find the customer with the highest total spending.",
+    "label": "SELECT c.customer_id, c.first_name, c.last_name, SUM(o.total_amount) AS total_spent FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id ORDER BY total_spent DESC LIMIT 1;"
+  },
+  {
+    "question": "Find orders with total_amount greater than the average total_amount.",
+    "label": "SELECT * FROM orders WHERE total_amount > (SELECT AVG(total_amount) FROM orders);"
+  },
+  {
+    "question": "List customers who have placed more than 5 orders.",
+    "label": "SELECT c.customer_id, c.first_name, c.last_name FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id HAVING COUNT(o.order_id) > 5;"
+  },
+  {
+    "question": "List addresses in cities starting with 'New'.",
+    "label": "SELECT * FROM addresses WHERE city LIKE 'New%';"
+  },
+  {
+    "question": "List orders sorted by total_amount in descending order.",
+    "label": "SELECT * FROM orders ORDER BY total_amount DESC;"
+  },
+  {
+    "question": "List orders sorted by order_date in ascending order.",
+    "label": "SELECT * FROM orders ORDER BY order_date ASC;"
+  },
+  {
+    "question": "List order items for product_id 50.",
+    "label": "SELECT * FROM order_items WHERE product_id = 50;"
+  },
+  {
+    "question": "List customers with email containing 'shop'.",
+    "label": "SELECT * FROM customers WHERE email LIKE '%shop%';"
+  },
+  {
+    "question": "Find orders where total_amount is exactly 500.",
+    "label": "SELECT * FROM orders WHERE total_amount = 500;"
+  },
+  {
+    "question": "List orders with a total_amount of zero.",
+    "label": "SELECT * FROM orders WHERE total_amount = 0;"
+  },
+  {
+    "question": "List the first 10 customers.",
+    "label": "SELECT * FROM customers LIMIT 10;"
+  },
+  {
+    "question": "List the first 10 orders.",
+    "label": "SELECT * FROM orders LIMIT 10;"
+  },
+  {
+    "question": "List the first 10 order items.",
+    "label": "SELECT * FROM order_items LIMIT 10;"
+  },
+  {
+    "question": "Show distinct states from addresses.",
+    "label": "SELECT DISTINCT state FROM addresses;"
+  },
+  {
+    "question": "Show distinct cities from addresses.",
+    "label": "SELECT DISTINCT city FROM addresses;"
+  },
+  {
+    "question": "List orders with order_date in 2023.",
+    "label": "SELECT * FROM orders WHERE YEAR(order_date) = 2023;"
+  },
+  {
+    "question": "List customers along with the number of orders they have placed.",
+    "label": "SELECT c.customer_id, c.first_name, c.last_name, COUNT(o.order_id) AS order_count FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id;"
+  },
+  {
+    "question": "List customers with more than 2 orders.",
+    "label": "SELECT c.customer_id, c.first_name, c.last_name FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id HAVING COUNT(o.order_id) > 2;"
+  },
+  {
+    "question": "Find the average order total for each customer.",
+    "label": "SELECT c.customer_id, AVG(o.total_amount) AS avg_order_total FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id;"
+  },
+  {
+    "question": "List order items sorted by price in descending order.",
+    "label": "SELECT * FROM order_items ORDER BY price DESC;"
+  },
+  {
+    "question": "List order items sorted by quantity in ascending order.",
+    "label": "SELECT * FROM order_items ORDER BY quantity ASC;"
+  },
+  {
+    "question": "Find the total number of order items for order_id 100.",
+    "label": "SELECT COUNT(*) FROM order_items WHERE order_id = 100;"
+  },
+  {
+    "question": "Find the total revenue from orders.",
+    "label": "SELECT SUM(total_amount) FROM orders;"
+  },
+  {
+    "question": "Find the average revenue per order.",
+    "label": "SELECT AVG(total_amount) FROM orders;"
+  },
+  {
+    "question": "List orders with customer details and address city.",
+    "label": "SELECT o.order_id, c.first_name, c.last_name, a.city FROM orders o JOIN customers c ON o.customer_id = c.customer_id JOIN addresses a ON c.address_id = a.address_id;"
+  },
+  {
+    "question": "Find orders for customers with last name 'Smith'.",
+    "label": "SELECT o.* FROM orders o JOIN customers c ON o.customer_id = c.customer_id WHERE c.last_name = 'Smith';"
+  },
+  {
+    "question": "List customers whose first name is 'Emily'.",
+    "label": "SELECT * FROM customers WHERE first_name = 'Emily';"
+  },
+  {
+    "question": "Find orders placed in Q1 of 2023.",
+    "label": "SELECT * FROM orders WHERE MONTH(order_date) IN (1,2,3) AND YEAR(order_date) = 2023;"
+  },
+  {
+    "question": "List order items with price greater than 100.",
+    "label": "SELECT * FROM order_items WHERE price > 100;"
+  },
+  {
+    "question": "Find orders with at least one order item having quantity > 10.",
+    "label": "SELECT DISTINCT o.* FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE oi.quantity > 10;"
+  },
+  {
+    "question": "List orders that have been updated in the last 7 days.",
+    "label": "SELECT * FROM orders WHERE order_date >= DATE_SUB(CURDATE(), INTERVAL 7 DAY);"
+  },
+  {
+    "question": "List customers sorted by email alphabetically.",
+    "label": "SELECT * FROM customers ORDER BY email ASC;"
+  },
+  {
+    "question": "Find orders for customers in the state 'TX'.",
+    "label": "SELECT o.* FROM orders o JOIN customers c ON o.customer_id = c.customer_id JOIN addresses a ON c.address_id = a.address_id WHERE a.state = 'TX';"
+  },
+  {
+    "question": "Find customers with phone numbers containing '123'.",
+    "label": "SELECT * FROM customers WHERE phone_number LIKE '%123%';"
+  },
+  {
+    "question": "List addresses with street names containing 'Ave'.",
+    "label": "SELECT * FROM addresses WHERE street LIKE '%Ave%';"
+  },
+  {
+    "question": "Find orders with a total_amount above the 90th percentile.",
+    "label": "SELECT * FROM orders WHERE total_amount > (SELECT PERCENTILE_CONT(0.9) WITHIN GROUP (ORDER BY total_amount) FROM orders);"
+  },
+  {
+    "question": "List order items with order_item_id greater than 500.",
+    "label": "SELECT * FROM order_items WHERE order_item_id > 500;"
+  },
+  {
+    "question": "Find the average quantity of items per order.",
+    "label": "SELECT order_id, AVG(quantity) AS avg_quantity FROM order_items GROUP BY order_id;"
+  },
+  {
+    "question": "List orders with a custom alias for total_amount as 'OrderTotal'.",
+    "label": "SELECT order_id, total_amount AS OrderTotal FROM orders;"
+  },
+  {
+    "question": "List customers along with the length of their email addresses.",
+    "label": "SELECT customer_id, first_name, last_name, LENGTH(email) AS email_length FROM customers;"
+  },
+  {
+    "question": "Find the customer with the shortest email address.",
+    "label": "SELECT * FROM customers ORDER BY LENGTH(email) ASC LIMIT 1;"
+  },
+  {
+    "question": "List orders grouped by customer_id with the sum of total_amount.",
+    "label": "SELECT customer_id, SUM(total_amount) AS total_spent FROM orders GROUP BY customer_id;"
+  },
+  {
+    "question": "Find customers whose first_name and last_name concatenated equals 'JohnDoe'.",
+    "label": "SELECT * FROM customers WHERE CONCAT(first_name, last_name) = 'JohnDoe';"
+  },
+  {
+    "question": "List orders with order_date formatted as 'YYYY-MM-DD'.",
+    "label": "SELECT order_id, DATE_FORMAT(order_date, '%Y-%m-%d') AS formatted_date FROM orders;"
+  },
+  {
+    "question": "Find orders where the day of the month is 15.",
+    "label": "SELECT * FROM orders WHERE DAY(order_date) = 15;"
+  },
+  {
+    "question": "List customers with addresses in the city 'San Francisco'.",
+    "label": "SELECT c.*, a.city FROM customers c JOIN addresses a ON c.address_id = a.address_id WHERE a.city = 'San Francisco';"
+  },
+  {
+    "question": "List orders and include a computed column for tax (5% of total_amount).",
+    "label": "SELECT order_id, total_amount, total_amount * 0.05 AS tax FROM orders;"
+  },
+  {
+    "question": "List order items along with a computed column for total cost (quantity * price) rounded to 2 decimals.",
+    "label": "SELECT order_item_id, ROUND(quantity * price, 2) AS total_cost FROM order_items;"
+  },
+  {
+    "question": "List orders with status 'shipped'.",
+    "label": "SELECT * FROM orders WHERE status = 'shipped';"
+  },
+  {
+    "question": "List customers along with the count of orders they have placed.",
+    "label": "SELECT c.customer_id, c.first_name, c.last_name, COUNT(o.order_id) AS order_count FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id;"
+  },
+  {
+    "question": "List addresses along with country_id.",
+    "label": "SELECT address_id, street, city, state, country_id FROM addresses;"
+  },
+  {
+    "question": "Find orders with total_amount less than 50.",
+    "label": "SELECT * FROM orders WHERE total_amount < 50;"
+  },
+  {
+    "question": "List orders along with the month of the order_date.",
+    "label": "SELECT order_id, MONTH(order_date) AS order_month FROM orders;"
+  },
+  {
+    "question": "List order items with a condition where quantity equals 1.",
+    "label": "SELECT * FROM order_items WHERE quantity = 1;"
+  },
+  {
+    "question": "Find customers with a missing phone_number.",
+    "label": "SELECT * FROM customers WHERE phone_number IS NULL;"
+  },
+  {
+    "question": "List orders with a condition that order_date is not null.",
+    "label": "SELECT * FROM orders WHERE order_date IS NOT NULL;"
+  },
+  {
+    "question": "List customers with first_name in uppercase.",
+    "label": "SELECT UPPER(first_name) AS first_name_upper FROM customers;"
+  },
+  {
+    "question": "List addresses with city names in lowercase.",
+    "label": "SELECT LOWER(city) AS city_lower FROM addresses;"
+  },
+  {
+    "question": "Find the total number of customers in each state.",
+    "label": "SELECT a.state, COUNT(*) AS customer_count FROM addresses a JOIN customers c ON a.address_id = c.address_id GROUP BY a.state;"
+  },
+  {
+    "question": "List orders along with the week number of the order_date.",
+    "label": "SELECT order_id, WEEK(order_date) AS week_number FROM orders;"
+  },
+  {
+    "question": "List order items with a flag 'HighQuantity' if quantity > 10.",
+    "label": "SELECT order_item_id, quantity, CASE WHEN quantity > 10 THEN 'HighQuantity' ELSE 'Normal' END AS quantity_flag FROM order_items;"
+  },
+  {
+    "question": "Find orders with total_amount in the top 10%.",
+    "label": "SELECT * FROM orders WHERE total_amount >= (SELECT PERCENTILE_CONT(0.9) WITHIN GROUP (ORDER BY total_amount) FROM orders);"
+  },
+  {
+    "question": "List customers with a computed column for full name (first_name and last_name concatenated).",
+    "label": "SELECT customer_id, CONCAT(first_name, ' ', last_name) AS full_name FROM customers;"
+  },
+  {
+    "question": "List orders with a computed column showing days since the order_date.",
+    "label": "SELECT order_id, DATEDIFF(CURDATE(), order_date) AS days_since_order FROM orders;"
+  },
+  {
+    "question": "List order items and sort by total cost (quantity * price) in descending order.",
+    "label": "SELECT order_item_id, quantity * price AS total_cost FROM order_items ORDER BY total_cost DESC;"
+  },
+  {
+    "question": "Find the maximum quantity ordered in a single order item.",
+    "label": "SELECT MAX(quantity) FROM order_items;"
+  },
+  {
+    "question": "List customers who have made orders exceeding an average total_amount of 200.",
+    "label": "SELECT c.customer_id, c.first_name, c.last_name FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id HAVING AVG(o.total_amount) > 200;"
+  },
+  {
+    "question": "List orders along with a computed column for average item price.",
+    "label": "SELECT o.order_id, (SELECT AVG(oi.price) FROM order_items oi WHERE oi.order_id = o.order_id) AS avg_item_price FROM orders o;"
+  },
+  {
+    "question": "List customers who have placed orders in the last 30 days.",
+    "label": "SELECT DISTINCT c.* FROM customers c JOIN orders o ON c.customer_id = o.customer_id WHERE o.order_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY);"
+  },
+  {
+    "question": "List addresses in the country with country_id 'US'.",
+    "label": "SELECT * FROM addresses WHERE country_id = 'US';"
+  },
+  {
+    "question": "Find orders where the order_date is in December.",
+    "label": "SELECT * FROM orders WHERE MONTH(order_date) = 12;"
+  },
+  {
+    "question": "List customers with first_name longer than 5 characters.",
+    "label": "SELECT * FROM customers WHERE LENGTH(first_name) > 5;"
+  },
+  {
+    "question": "List orders with a computed column for order year.",
+    "label": "SELECT order_id, YEAR(order_date) AS order_year FROM orders;"
+  },
+  {
+    "question": "List order items with a condition where price is between 10 and 50.",
+    "label": "SELECT * FROM order_items WHERE price BETWEEN 10 AND 50;"
+  },
+  {
+    "question": "List customers with email addresses not containing 'noreply'.",
+    "label": "SELECT * FROM customers WHERE email NOT LIKE '%noreply%';"
+  },
+  {
+    "question": "Find the total number of orders placed by customers in 'Florida'.",
+    "label": "SELECT COUNT(*) FROM orders o JOIN customers c ON o.customer_id = c.customer_id JOIN addresses a ON c.address_id = a.address_id WHERE a.state = 'Florida';"
+  },
+  {
+    "question": "List orders along with the number of order items.",
+    "label": "SELECT o.order_id, (SELECT COUNT(*) FROM order_items oi WHERE oi.order_id = o.order_id) AS item_count FROM orders o;"
+  },
+  {
+    "question": "List customers who have ordered a specific product with product_id = 100.",
+    "label": "SELECT DISTINCT c.* FROM customers c JOIN orders o ON c.customer_id = o.customer_id JOIN order_items oi ON o.order_id = oi.order_id WHERE oi.product_id = 100;"
+  },
+  {
+    "question": "List addresses with a condition where zip_code starts with '9'.",
+    "label": "SELECT * FROM addresses WHERE zip_code LIKE '9%';"
+  },
+  {
+    "question": "Find orders that have not been updated (order_date is null).",
+    "label": "SELECT * FROM orders WHERE order_date IS NULL;"
+  },
+  {
+    "question": "List order items with quantity and a computed column for cost per item (price/quantity), avoiding division by zero.",
+    "label": "SELECT order_item_id, quantity, CASE WHEN quantity <> 0 THEN price/quantity ELSE 0 END AS cost_per_item FROM order_items;"
+  },
+  {
+    "question": "List customers with a computed column for domain extracted from email.",
+    "label": "SELECT customer_id, email, SUBSTRING_INDEX(email, '@', -1) AS domain FROM customers;"
+  },
+  {
+    "question": "List orders with a condition where total_amount is not null.",
+    "label": "SELECT * FROM orders WHERE total_amount IS NOT NULL;"
+  },
+  {
+    "question": "List addresses sorted by zip_code in descending order.",
+    "label": "SELECT * FROM addresses ORDER BY zip_code DESC;"
+  },
+  {
+    "question": "List order items for orders placed by customer with customer_id = 25.",
+    "label": "SELECT oi.* FROM order_items oi JOIN orders o ON oi.order_id = o.order_id WHERE o.customer_id = 25;"
+  },
+  {
+    "question": "List customers along with their order status using a join.",
+    "label": "SELECT c.customer_id, c.first_name, c.last_name, o.status FROM customers c JOIN orders o ON c.customer_id = o.customer_id;"
+  },
+  {
+    "question": "List orders with a flag indicating if total_amount is above 1000.",
+    "label": "SELECT order_id, total_amount, CASE WHEN total_amount > 1000 THEN 'High' ELSE 'Low' END AS amount_flag FROM orders;"
+  },
+  {
+    "question": "List addresses with a computed column for full address (street, city, state, zip_code).",
+    "label": "SELECT address_id, CONCAT(street, ', ', city, ', ', state, ' ', zip_code) AS full_address FROM addresses;"
+  },
+  {
+    "question": "List orders with a condition for order_date in the last 90 days.",
+    "label": "SELECT * FROM orders WHERE order_date >= DATE_SUB(CURDATE(), INTERVAL 90 DAY);"
+  },
+  {
+    "question": "List customers with the count of orders they placed in 2023.",
+    "label": "SELECT c.customer_id, COUNT(o.order_id) AS orders_2023 FROM customers c JOIN orders o ON c.customer_id = o.customer_id WHERE YEAR(o.order_date) = 2023 GROUP BY c.customer_id;"
+  },
+  {
+    "question": "List order items with a computed column for discount price if quantity > 10 (price * 0.9) else regular price.",
+    "label": "SELECT order_item_id, price, quantity, CASE WHEN quantity > 10 THEN price * 0.9 ELSE price END AS final_price FROM order_items;"
+  },
+  {
+    "question": "List orders with a computed column for profit (assuming cost is 80% of total_amount).",
+    "label": "SELECT order_id, total_amount, total_amount * 0.2 AS profit FROM orders;"
+  },
+  {
+    "question": "List customers with more than 10 orders.",
+    "label": "SELECT c.customer_id, c.first_name, c.last_name FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id HAVING COUNT(o.order_id) > 10;"
+  },
+  {
+    "question": "List orders with customer details and order item count.",
+    "label": "SELECT o.order_id, c.first_name, c.last_name, (SELECT COUNT(*) FROM order_items oi WHERE oi.order_id = o.order_id) AS item_count FROM orders o JOIN customers c ON o.customer_id = c.customer_id;"
+  },
+  {
+    "question": "List addresses with street names that include 'Road'.",
+    "label": "SELECT * FROM addresses WHERE street LIKE '%Road%';"
+  },
+  {
+    "question": "Find orders where the order_date is a weekend.",
+    "label": "SELECT * FROM orders WHERE DAYOFWEEK(order_date) IN (1,7);"
+  },
+  {
+    "question": "List customers whose last name starts with 'B'.",
+    "label": "SELECT * FROM customers WHERE last_name LIKE 'B%';"
+  },
+  {
+    "question": "List orders with a computed column for order quarter.",
+    "label": "SELECT order_id, QUARTER(order_date) AS order_quarter FROM orders;"
+  },
+  {
+    "question": "List order items with price less than 20.",
+    "label": "SELECT * FROM order_items WHERE price < 20;"
+  },
+  {
+    "question": "List customers along with a count of unique order items they've purchased.",
+    "label": "SELECT c.customer_id, c.first_name, COUNT(DISTINCT oi.order_item_id) AS unique_items FROM customers c JOIN orders o ON c.customer_id = o.customer_id JOIN order_items oi ON o.order_id = oi.order_id GROUP BY c.customer_id;"
+  },
+  {
+    "question": "List orders with the difference in days between order_date and today.",
+    "label": "SELECT order_id, DATEDIFF(CURDATE(), order_date) AS days_elapsed FROM orders;"
+  },
+  {
+    "question": "List order items sorted by order_item_id in ascending order.",
+    "label": "SELECT * FROM order_items ORDER BY order_item_id ASC;"
+  },
+  {
+    "question": "List customers with email ending with '.com'.",
+    "label": "SELECT * FROM customers WHERE email LIKE '%.com';"
+  },
+  {
+    "question": "List orders with total_amount and include a 10% discount column.",
+    "label": "SELECT order_id, total_amount, total_amount * 0.9 AS discounted_total FROM orders;"
+  },
+  {
+    "question": "List addresses with a condition for city length greater than 5.",
+    "label": "SELECT * FROM addresses WHERE LENGTH(city) > 5;"
+  },
+  {
+    "question": "List orders with customer phone numbers using a join.",
+    "label": "SELECT o.order_id, c.phone_number FROM orders o JOIN customers c ON o.customer_id = c.customer_id;"
+  },
+  {
+    "question": "List customers with first_name 'Michael'.",
+    "label": "SELECT * FROM customers WHERE first_name = 'Michael';"
+  },
+  {
+    "question": "List orders placed before '2022-01-01'.",
+    "label": "SELECT * FROM orders WHERE order_date < '2022-01-01';"
+  },
+  {
+    "question": "List orders with order_date after '2023-01-01'.",
+    "label": "SELECT * FROM orders WHERE order_date > '2023-01-01';"
+  },
+  {
+    "question": "List order items with product_id 200.",
+    "label": "SELECT * FROM order_items WHERE product_id = 200;"
+  },
+  {
+    "question": "List customers with an address in the state 'California'.",
+    "label": "SELECT c.* FROM customers c JOIN addresses a ON c.address_id = a.address_id WHERE a.state = 'California';"
+  },
+  {
+    "question": "List orders with customer first and last names using alias.",
+    "label": "SELECT o.order_id, c.first_name AS fname, c.last_name AS lname FROM orders o JOIN customers c ON o.customer_id = c.customer_id;"
+  },
+  {
+    "question": "List orders with order_date and the time difference from the current timestamp in hours.",
+    "label": "SELECT order_id, order_date, TIMESTAMPDIFF(HOUR, order_date, NOW()) AS hours_diff FROM orders;"
+  },
+  {
+    "question": "List order items with a computed column for price per unit (price/quantity) with a check to avoid division by zero.",
+    "label": "SELECT order_item_id, price, quantity, CASE WHEN quantity > 0 THEN price/quantity ELSE NULL END AS unit_price FROM order_items;"
+  },
+  {
+    "question": "List customers with orders where total_amount exceeds 500.",
+    "label": "SELECT DISTINCT c.* FROM customers c JOIN orders o ON c.customer_id = o.customer_id WHERE o.total_amount > 500;"
+  },
+  {
+    "question": "List orders with total_amount and a computed column indicating 'High' or 'Low' based on the average total_amount.",
+    "label": "SELECT order_id, total_amount, CASE WHEN total_amount > (SELECT AVG(total_amount) FROM orders) THEN 'High' ELSE 'Low' END AS amount_category FROM orders;"
+  },
+  {
+    "question": "List order items with order_item_id and a flag 'Bulk' if quantity >= 20.",
+    "label": "SELECT order_item_id, quantity, CASE WHEN quantity >= 20 THEN 'Bulk' ELSE 'Standard' END AS order_type FROM order_items;"
+  },
+  {
+    "question": "List customers with order count and average order total.",
+    "label": "SELECT c.customer_id, COUNT(o.order_id) AS order_count, AVG(o.total_amount) AS avg_total FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id;"
+  },
+  {
+    "question": "List addresses with a computed column for state in uppercase.",
+    "label": "SELECT address_id, UPPER(state) AS state_upper FROM addresses;"
+  },
+  {
+    "question": "List orders with a computed column for formatted order_date as 'DD-MM-YYYY'.",
+    "label": "SELECT order_id, DATE_FORMAT(order_date, '%d-%m-%Y') AS formatted_date FROM orders;"
+  },
+  {
+    "question": "List customers with last_name 'Johnson'.",
+    "label": "SELECT * FROM customers WHERE last_name = 'Johnson';"
+  },
+  {
+    "question": "List orders with a computed column for the day of the week.",
+    "label": "SELECT order_id, DAYNAME(order_date) AS day_name FROM orders;"
+  },
+  {
+    "question": "List order items with a total cost greater than 100.",
+    "label": "SELECT * FROM order_items WHERE (quantity * price) > 100;"
+  },
+  {
+    "question": "List customers along with their email domains.",
+    "label": "SELECT customer_id, email, SUBSTRING_INDEX(email, '@', -1) AS email_domain FROM customers;"
+  },
+  {
+    "question": "List orders with order_date and order_id concatenated as a string.",
+    "label": "SELECT CONCAT(order_date, '-', order_id) AS order_label FROM orders;"
+  },
+  {
+    "question": "List addresses with street and city concatenated.",
+    "label": "SELECT address_id, CONCAT(street, ', ', city) AS location FROM addresses;"
+  },
+  {
+    "question": "Find orders with customer_id in (1, 2, 3).",
+    "label": "SELECT * FROM orders WHERE customer_id IN (1, 2, 3);"
+  },
+  {
+    "question": "List order items with order_item_id and product_id using aliases.",
+    "label": "SELECT order_item_id AS oi_id, product_id AS prod_id FROM order_items;"
+  },
+  {
+    "question": "List customers with phone numbers ending in '7890'.",
+    "label": "SELECT * FROM customers WHERE phone_number LIKE '%7890';"
+  },
+  {
+    "question": "List orders with total_amount and a custom label 'Total'.",
+    "label": "SELECT order_id, total_amount AS Total FROM orders;"
+  },
+  {
+    "question": "List order items with order_id and total quantity grouped by order_id.",
+    "label": "SELECT order_id, SUM(quantity) AS total_quantity FROM order_items GROUP BY order_id;"
+  },
+  {
+    "question": "List customers and the count of distinct orders they have placed.",
+    "label": "SELECT c.customer_id, COUNT(DISTINCT o.order_id) AS distinct_orders FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id;"
+  },
+  {
+    "question": "List orders with the average price of their order items.",
+    "label": "SELECT o.order_id, (SELECT AVG(oi.price) FROM order_items oi WHERE oi.order_id = o.order_id) AS avg_item_price FROM orders o;"
+  },
+  {
+    "question": "List addresses where the city is either 'Miami' or 'Orlando'.",
+    "label": "SELECT * FROM addresses WHERE city IN ('Miami', 'Orlando');"
+  },
+  {
+    "question": "List customers with a computed column showing reversed first_name.",
+    "label": "SELECT customer_id, REVERSE(first_name) AS reversed_first_name FROM customers;"
+  },
+  {
+    "question": "List orders with a computed column for cumulative total_amount per customer.",
+    "label": "SELECT o1.order_id, o1.customer_id, o1.total_amount, (SELECT SUM(o2.total_amount) FROM orders o2 WHERE o2.customer_id = o1.customer_id AND o2.order_date <= o1.order_date) AS cumulative_total FROM orders o1;"
+  },
+  {
+    "question": "List order items with product_id and total cost grouped by product_id.",
+    "label": "SELECT product_id, SUM(quantity * price) AS total_cost FROM order_items GROUP BY product_id;"
+  },
+  {
+    "question": "List customers with first_name starting with 'S' and ending with 'a'.",
+    "label": "SELECT * FROM customers WHERE first_name LIKE 'S%a';"
+  },
+  {
+    "question": "List orders placed in the first half of 2023.",
+    "label": "SELECT * FROM orders WHERE YEAR(order_date) = 2023 AND MONTH(order_date) <= 6;"
+  },
+  {
+    "question": "List addresses with zip_code length equal to 5.",
+    "label": "SELECT * FROM addresses WHERE LENGTH(zip_code) = 5;"
+  },
+  {
+    "question": "List order items with order_item_id and a computed column for discount (if price > 50 then price*0.95 else price).",
+    "label": "SELECT order_item_id, price, CASE WHEN price > 50 THEN price * 0.95 ELSE price END AS discounted_price FROM order_items;"
+  },
+  {
+    "question": "List customers with orders, showing customer details and order total.",
+    "label": "SELECT c.customer_id, c.first_name, c.last_name, o.total_amount FROM customers c JOIN orders o ON c.customer_id = o.customer_id;"
+  },
+  {
+    "question": "List orders with a computed column for formatted order_date as 'Month Day, Year'.",
+    "label": "SELECT order_id, DATE_FORMAT(order_date, '%M %d, %Y') AS formatted_date FROM orders;"
+  },
+  {
+    "question": "List order items with a computed column for total cost and sort in descending order.",
+    "label": "SELECT order_item_id, quantity * price AS total_cost FROM order_items ORDER BY total_cost DESC;"
+  },
+  {
+    "question": "List customers with email containing 'example'.",
+    "label": "SELECT * FROM customers WHERE email LIKE '%example%';"
+  },
+  {
+    "question": "List orders with customer first_name, last_name, and order status.",
+    "label": "SELECT o.order_id, c.first_name, c.last_name, o.status FROM orders o JOIN customers c ON o.customer_id = c.customer_id;"
+  },
+  {
+    "question": "List addresses with a condition for state 'IL'.",
+    "label": "SELECT * FROM addresses WHERE state = 'IL';"
+  },
+  {
+    "question": "List orders with a computed column for the day of the month.",
+    "label": "SELECT order_id, DAY(order_date) AS day_of_month FROM orders;"
+  },
+  {
+    "question": "List order items with a computed column for cost per unit and flag as 'Expensive' if cost per unit > 10.",
+    "label": "SELECT order_item_id, CASE WHEN quantity <> 0 AND (price/quantity) > 10 THEN 'Expensive' ELSE 'Affordable' END AS cost_category FROM order_items;"
+  },
+  {
+    "question": "List customers with a computed column for the number of characters in their full name.",
+    "label": "SELECT customer_id, LENGTH(CONCAT(first_name, first_name)) AS name_length FROM customers;"
+  },
+  {
+    "question": "List orders with the sum of order item quantities for each order.",
+    "label": "SELECT o.order_id, (SELECT SUM(oi.quantity) FROM order_items oi WHERE oi.order_id = o.order_id) AS total_quantity FROM orders o;"
+  },
+  {
+    "question": "List customers with at least one order having total_amount above 1000.",
+    "label": "SELECT DISTINCT c.* FROM customers c JOIN orders o ON c.customer_id = o.customer_id WHERE o.total_amount > 1000;"
+  },
+  {
+    "question": "List orders along with the maximum price of their order items.",
+    "label": "SELECT o.order_id, (SELECT MAX(oi.price) FROM order_items oi WHERE oi.order_id = o.order_id) AS max_item_price FROM orders o;"
+  },
+  {
+    "question": "List order items with a computed column for subtotal (quantity * price) and a 10% tax applied.",
+    "label": "SELECT order_item_id, (quantity * price) * 1.10 AS subtotal_with_tax FROM order_items;"
+  },
+  {
+    "question": "List customers and their corresponding number of orders, sorted by order count in descending order.",
+    "label": "SELECT c.customer_id, COUNT(o.order_id) AS order_count FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id ORDER BY order_count DESC;"
+  },
+  {
+    "question": "List orders with a computed column for the number of days since the order was placed.",
+    "label": "SELECT order_id, DATEDIFF(CURDATE(), order_date) AS days_since FROM orders;"
+  },
+  {
+    "question": "List order items for orders placed in 2023.",
+    "label": "SELECT oi.* FROM order_items oi JOIN orders o ON oi.order_id = o.order_id WHERE YEAR(o.order_date) = 2023;"
+  },
+  {
+    "question": "List customers with orders and include a computed column for total spent per customer.",
+    "label": "SELECT c.customer_id, c.first_name, c.last_name, (SELECT SUM(o.total_amount) FROM orders o WHERE o.customer_id = c.customer_id) AS total_spent FROM customers c;"
+  },
+  {
+    "question": "List addresses along with the count of customers residing at each address.",
+    "label": "SELECT a.address_id, a.street, a.city, COUNT(c.customer_id) AS customer_count FROM addresses a LEFT JOIN customers c ON a.address_id = c.address_id GROUP BY a.address_id;"
+  },
+  {
+    "question": "List orders with a computed column for the ratio of total_amount to the number of items.",
+    "label": "SELECT o.order_id, o.total_amount, (o.total_amount / (SELECT COUNT(*) FROM order_items oi WHERE oi.order_id = o.order_id)) AS amount_per_item FROM orders o;"
+  },
+  {
+    "question": "List order items with a computed column for average price per unit (price divided by quantity) for items with quantity > 0.",
+    "label": "SELECT order_item_id, price/quantity AS avg_price_per_unit FROM order_items WHERE quantity > 0;"
+  },
+  {
+    "question": "List customers with last_name 'Williams'.",
+    "label": "SELECT * FROM customers WHERE last_name = 'Williams';"
+  },
+  {
+    "question": "List orders with a computed column for the difference between total_amount and the minimum total_amount across all orders.",
+    "label": "SELECT order_id, total_amount - (SELECT MIN(total_amount) FROM orders) AS diff_from_min FROM orders;"
+  },
+  {
+    "question": "List order items with product_id and a computed column for average total cost grouped by order_id and product_id.",
+    "label": "SELECT product_id, AVG(quantity * price) AS avg_total_cost FROM order_items GROUP BY order_id, product_id;"
+  },
+  {
+    "question": "List customers with a computed column for the number of characters in their first_name.",
+    "label": "SELECT customer_id, first_name, LENGTH(first_name) AS first_name_length FROM customers;"
+  },
+  {
+    "question": "List orders along with customer email and order_date.",
+    "label": "SELECT o.order_id, c.email, o.order_date FROM orders o JOIN customers c ON o.customer_id = c.customer_id;"
+  },
+  {
+    "question": "List addresses with a computed column for the first 3 letters of the city.",
+    "label": "SELECT address_id, city, LEFT(city, 3) AS city_prefix FROM addresses;"
+  },
+  {
+    "question": "List order items with a computed column for total cost rounded to the nearest integer.",
+    "label": "SELECT order_item_id, ROUND(quantity * price) AS total_cost FROM order_items;"
+  },
+  {
+    "question": "List customers with first_name 'Laura'.",
+    "label": "SELECT * FROM customers WHERE first_name = 'Laura';"
+  },
+  {
+    "question": "List orders with a computed column for formatted order_date as 'DD-MM-YYYY'.",
+    "label": "SELECT order_id, DATE_FORMAT(order_date, '%d-%m-%Y') AS formatted_date FROM orders;"
+  },
+  {
+    "question": "List order items for orders with total_amount greater than 500.",
+    "label": "SELECT oi.* FROM order_items oi JOIN orders o ON oi.order_id = o.order_id WHERE o.total_amount > 500;"
+  },
+  {
+    "question": "List customers with the domain of their email addresses extracted and in lowercase.",
+    "label": "SELECT customer_id, LOWER(SUBSTRING_INDEX(email, '@', -1)) AS email_domain FROM customers;"
+  },
+  {
+    "question": "List orders with a computed column for the percentage of total_amount relative to the maximum total_amount.",
+    "label": "SELECT order_id, total_amount, (total_amount / (SELECT MAX(total_amount) FROM orders)) * 100 AS percentage_of_max FROM orders;"
+  },
+  {
+    "question": "List order items with a computed column indicating if the order item is 'Bulk' (quantity > 10) or 'Single'.",
+    "label": "SELECT order_item_id, quantity, CASE WHEN quantity > 10 THEN 'Bulk' ELSE 'Single' END AS order_item_type FROM order_items;"
+  },
+  {
+    "question": "List customers with a computed column for initials (first letter of first_name and last_name).",
+    "label": "SELECT customer_id, CONCAT(LEFT(first_name, 1), LEFT(last_name, 1)) AS initials FROM customers;"
+  },
+  {
+    "question": "List orders with a computed column for the length of order_date in characters.",
+    "label": "SELECT order_id, LENGTH(order_date) AS date_length FROM orders;"
+  },
+  {
+    "question": "List order items with a computed column for unit price, ensuring no division by zero.",
+    "label": "SELECT order_item_id, CASE WHEN quantity = 0 THEN 0 ELSE price/quantity END AS unit_price FROM order_items;"
+  },
+  {
+    "question": "List customers with a computed column for full contact info (first_name, last_name, email).",
+    "label": "SELECT customer_id, CONCAT(first_name, ' ', last_name, ' - ', email) AS contact_info FROM customers;"
+  },
+  {
+    "question": "List orders with a computed column for order_date as a UNIX timestamp.",
+    "label": "SELECT order_id, UNIX_TIMESTAMP(order_date) AS order_timestamp FROM orders;"
+  },
+  {
+    "question": "List order items with a computed column for total cost and a discount of 5% applied if quantity > 5.",
+    "label": "SELECT order_item_id, quantity, price, CASE WHEN quantity > 5 THEN quantity * price * 0.95 ELSE quantity * price END AS discounted_total FROM order_items;"
+  },
+  {
+    "question": "List customers with a computed column for last_name in lowercase.",
+    "label": "SELECT customer_id, LOWER(last_name) AS last_name_lower FROM customers;"
+  },
+  {
+    "question": "List orders with a computed column for the difference in days between order_date and '2023-01-01'.",
+    "label": "SELECT order_id, DATEDIFF(order_date, '2023-01-01') AS days_from_2023 FROM orders;"
+  },
+  {
+    "question": "List order items with a computed column for cost efficiency (quantity divided by price), handling division by zero.",
+    "label": "SELECT order_item_id, CASE WHEN price = 0 THEN 0 ELSE quantity/price END AS cost_efficiency FROM order_items;"
+  },
+  {
+    "question": "List customers with orders from the city 'Seattle'.",
+    "label": "SELECT DISTINCT c.* FROM customers c JOIN addresses a ON c.address_id = a.address_id WHERE a.city = 'Seattle';"
+  },
+  {
+    "question": "List orders with a computed column for the ratio of total_amount to the number of items.",
+    "label": "SELECT o.order_id, o.total_amount, (o.total_amount / (SELECT COUNT(*) FROM order_items oi WHERE oi.order_id = o.order_id)) AS amount_per_item FROM orders o;"
+  },
+  {
+    "question": "List order items with a computed column for average price per unit for items with quantity > 0.",
+    "label": "SELECT order_item_id, (price/quantity) AS avg_price_per_unit FROM order_items WHERE quantity > 0;"
+  },
+  {
+    "question": "List customers with last_name 'Williams'.",
+    "label": "SELECT * FROM customers WHERE last_name = 'Williams';"
+  },
+  {
+    "question": "List orders with a computed column for the difference between total_amount and the average total_amount across all orders.",
+    "label": "SELECT order_id, total_amount - (SELECT AVG(total_amount) FROM orders) AS diff_from_avg FROM orders;"
+  },
+  {
+    "question": "List order items with a computed column for the product of quantity and price, aliased as 'line_total'.",
+    "label": "SELECT order_item_id, quantity * price AS line_total FROM order_items;"
+  },
+  {
+    "question": "List customers with a computed column for the count of orders and the sum of order totals.",
+    "label": "SELECT c.customer_id, COUNT(o.order_id) AS order_count, SUM(o.total_amount) AS total_spent FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id;"
+  },
+  {
+    "question": "List orders with a computed column for order_date in ISO 8601 format.",
+    "label": "SELECT order_id, DATE_FORMAT(order_date, '%Y-%m-%dT%H:%i:%s') AS iso_date FROM orders;"
+  },
+  {
+    "question": "List order items with a computed column for the ratio of quantity to price, handling division by zero.",
+    "label": "SELECT order_item_id, CASE WHEN price = 0 THEN 0 ELSE quantity/price END AS quantity_price_ratio FROM order_items;"
+  },
+  {
+    "question": "List customers with orders and include a computed column for average order value.",
+    "label": "SELECT c.customer_id, AVG(o.total_amount) AS avg_order_value FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id;"
+  },
+  {
+    "question": "List orders with customer details and a computed column for order value as a percentage of the highest order total.",
+    "label": "SELECT o.order_id, o.total_amount, (o.total_amount / (SELECT MAX(total_amount) FROM orders)) * 100 AS percentage_of_max FROM orders o JOIN customers c ON o.customer_id = c.customer_id;"
+  },
+  {
+    "question": "List order items with a computed column for total cost and apply a 10% discount if quantity > 15.",
+    "label": "SELECT order_item_id, quantity, price, CASE WHEN quantity > 15 THEN quantity * price * 0.90 ELSE quantity * price END AS final_total FROM order_items;"
+  },
+  {
+    "question": "List customers with a computed column for full name in lowercase.",
+    "label": "SELECT customer_id, LOWER(CONCAT(first_name, ' ', last_name)) AS full_name_lower FROM customers;"
+  },
+  {
+    "question": "List orders with a computed column for order_date labeled as 'OrderDate'.",
+    "label": "SELECT order_id, order_date AS OrderDate FROM orders;"
+  },
+  {
+    "question": "List order items with product_id and a computed column for total cost labeled as 'TotalCost'.",
+    "label": "SELECT order_item_id, product_id, quantity * price AS TotalCost FROM order_items;"
+  },
+  {
+    "question": "List customers with a computed column for the domain of their email, sorted by the domain.",
+    "label": "SELECT customer_id, SUBSTRING_INDEX(email, '@', -1) AS email_domain FROM customers ORDER BY email_domain ASC;"
+  },
+  {
+    "question": "List orders with a computed column for the day of week number.",
+    "label": "SELECT order_id, DAYOFWEEK(order_date) AS day_of_week FROM orders;"
+  },
+  {
+    "question": "List order items with a computed column for cost per unit, ensuring no division by zero, aliased as 'UnitCost'.",
+    "label": "SELECT order_item_id, CASE WHEN quantity = 0 THEN 0 ELSE price/quantity END AS UnitCost FROM order_items;"
+  },
+  {
+    "question": "List customers with a computed column for the number of characters in their full name.",
+    "label": "SELECT customer_id, LENGTH(CONCAT(first_name, ' ', last_name)) AS full_name_length FROM customers;"
+  },
+  {
+    "question": "List orders with a computed column for the total number of days between the first and last order for each customer.",
+    "label": "SELECT o.customer_id, DATEDIFF(MAX(o.order_date), MIN(o.order_date)) AS days_between_orders FROM orders o GROUP BY o.customer_id;"
+  },
+  {
+    "question": "List order items with a condition where product_id is not null.",
+    "label": "SELECT * FROM order_items WHERE product_id IS NOT NULL;"
+  },
+  {
+    "question": "List customers with a computed column for the first three characters of their first_name.",
+    "label": "SELECT customer_id, LEFT(first_name, 3) AS first_name_prefix FROM customers;"
+  },
+  {
+    "question": "List orders with a computed column for order_date and the difference in days from the current date.",
+    "label": "SELECT order_id, order_date, DATEDIFF(CURDATE(), order_date) AS days_since_order FROM orders;"
+  },
+  {
+    "question": "List order items with a computed column for the difference between the price and the average price for that order.",
+    "label": "SELECT oi.order_item_id, oi.price - (SELECT AVG(oi2.price) FROM order_items oi2 WHERE oi2.order_id = oi.order_id) AS price_diff FROM order_items oi;"
+  },
+  {
+    "question": "List customers with orders, showing customer details and the count of orders per customer.",
+    "label": "SELECT c.customer_id, c.first_name, c.last_name, COUNT(o.order_id) AS order_count FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id;"
+  },
+  {
+    "question": "List orders with a computed column for formatted order_date as 'Day, DD Month YYYY'.",
+    "label": "SELECT order_id, DATE_FORMAT(order_date, '%W, %d %M %Y') AS formatted_date FROM orders;"
+  },
+  {
+    "question": "List order items with a computed column for product_id and total cost, grouped by product_id.",
+    "label": "SELECT product_id, SUM(quantity * price) AS total_cost FROM order_items GROUP BY product_id;"
+  },
+  {
+    "question": "List customers with a computed column for the email domain and filter where the domain is 'hotmail.com'.",
+    "label": "SELECT * FROM customers WHERE SUBSTRING_INDEX(email, '@', -1) = 'hotmail.com';"
+  },
+  {
+    "question": "List customer IDs along with their associated order IDs.",
+    "label": "SELECT c.customer_id, o.order_id FROM customers c JOIN orders o ON c.customer_id = o.customer_id;"
+  },
+  {
+    "question": "Find all orders where the customer's email domain is 'yahoo.com'.",
+    "label": "SELECT o.* FROM orders o JOIN customers c ON o.customer_id = c.customer_id WHERE c.email LIKE '%@yahoo.com';"
+  },
+  {
+    "question": "Show addresses along with the length of their street names.",
+    "label": "SELECT address_id, street, LENGTH(street) AS street_length FROM addresses;"
+  },
+  {
+    "question": "List order items where the total cost (quantity * price) is less than 50.",
+    "label": "SELECT * FROM order_items WHERE (quantity * price) < 50;"
+  },
+  {
+    "question": "Find the average number of order items per order.",
+    "label": "SELECT AVG(cnt) AS avg_items FROM (SELECT COUNT(*) AS cnt FROM order_items GROUP BY order_id) AS subquery;"
+  },
+  {
+    "question": "List customers whose first name is longer than 6 characters.",
+    "label": "SELECT * FROM customers WHERE LENGTH(first_name) > 6;"
+  },
+  {
+    "question": "List orders placed within the last 60 days.",
+    "label": "SELECT * FROM orders WHERE order_date >= DATE_SUB(CURDATE(), INTERVAL 60 DAY);"
+  },
+  {
+    "question": "Find the maximum quantity ordered among all order items.",
+    "label": "SELECT MAX(quantity) FROM order_items;"
+  },
+  {
+    "question": "Show the minimum price among all order items.",
+    "label": "SELECT MIN(price) FROM order_items;"
+  },
+  {
+    "question": "List customers along with their total number of orders in descending order.",
+    "label": "SELECT c.customer_id, COUNT(o.order_id) AS total_orders FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id ORDER BY total_orders DESC;"
+  },
+  {
+    "question": "List orders where the total_amount is either null or zero.",
+    "label": "SELECT * FROM orders WHERE total_amount IS NULL OR total_amount = 0;"
+  },
+  {
+    "question": "Find the average total_amount for orders placed in May.",
+    "label": "SELECT AVG(total_amount) FROM orders WHERE MONTH(order_date) = 5;"
+  },
+  {
+    "question": "List addresses in cities that contain the substring 'ville'.",
+    "label": "SELECT * FROM addresses WHERE city LIKE '%ville%';"
+  },
+  {
+    "question": "Show customers and display the first three letters of their last name.",
+    "label": "SELECT customer_id, last_name, LEFT(last_name, 3) AS last_initials FROM customers;"
+  },
+  {
+    "question": "List orders with order_date and extract the month name from the date.",
+    "label": "SELECT order_id, order_date, MONTHNAME(order_date) AS month_name FROM orders;"
+  },
+  {
+    "question": "For order items, apply a 15% discount on the price when quantity is greater than 10.",
+    "label": "SELECT order_item_id, quantity, price, CASE WHEN quantity > 10 THEN price * 0.85 ELSE price END AS discounted_price FROM order_items;"
+  },
+  {
+    "question": "List customers with valid email addresses that contain both '@' and '.'.",
+    "label": "SELECT * FROM customers WHERE email LIKE '%@%.%';"
+  },
+  {
+    "question": "List orders with a computed column that categorizes orders as 'Small', 'Medium', or 'Large' based on total_amount (<100, between 100 and 500, >500).",
+    "label": "SELECT order_id, total_amount, CASE WHEN total_amount < 100 THEN 'Small' WHEN total_amount BETWEEN 100 AND 500 THEN 'Medium' ELSE 'Large' END AS order_size FROM orders;"
+  },
+  {
+    "question": "Group order items by product_id to get the total quantity sold per product.",
+    "label": "SELECT product_id, SUM(quantity) AS total_sold FROM order_items GROUP BY product_id;"
+  },
+  {
+    "question": "Find customers who have placed orders on weekends.",
+    "label": "SELECT DISTINCT c.* FROM customers c JOIN orders o ON c.customer_id = o.customer_id WHERE DAYOFWEEK(o.order_date) IN (1,7);"
+  },
+  {
+    "question": "List addresses in the state 'CA' and city 'San Diego'.",
+    "label": "SELECT * FROM addresses WHERE state = 'CA' AND city = 'San Diego';"
+  },
+  {
+    "question": "Show orders with total_amount and compute a 5% service charge on each order.",
+    "label": "SELECT order_id, total_amount, total_amount * 0.05 AS service_charge FROM orders;"
+  },
+  {
+    "question": "List customers who do not have a phone number.",
+    "label": "SELECT * FROM customers WHERE phone_number IS NULL OR phone_number = '';"
+  },
+  {
+    "question": "Display orders with the day of week number (1=Sunday, 7=Saturday).",
+    "label": "SELECT order_id, DAYOFWEEK(order_date) AS day_of_week FROM orders;"
+  },
+  {
+    "question": "Calculate the total revenue generated by each customer.",
+    "label": "SELECT c.customer_id, SUM(o.total_amount) AS revenue FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id;"
+  },
+  {
+    "question": "For order items, indicate if the price is above the average price of all order items.",
+    "label": "SELECT order_item_id, price, CASE WHEN price > (SELECT AVG(price) FROM order_items) THEN 'Above Average' ELSE 'Below Average' END AS price_category FROM order_items;"
+  },
+  {
+    "question": "List customers whose last names contain the letter 'z'.",
+    "label": "SELECT * FROM customers WHERE last_name LIKE '%z%';"
+  },
+  {
+    "question": "Show orders with the time portion of order_date using TIME().",
+    "label": "SELECT order_id, TIME(order_date) AS order_time FROM orders;"
+  },
+  {
+    "question": "List addresses that have a country_id of 'US'.",
+    "label": "SELECT * FROM addresses WHERE country_id = 'US';"
+  },
+  {
+    "question": "Find orders with order_date before '2022-06-01'.",
+    "label": "SELECT * FROM orders WHERE order_date < '2022-06-01';"
+  },
+  {
+    "question": "Display customers whose last name is longer than 8 characters.",
+    "label": "SELECT * FROM customers WHERE LENGTH(last_name) > 8;"
+  },
+  {
+    "question": "For order items, display order_item_id and the total cost formatted as currency.",
+    "label": "SELECT order_item_id, CONCAT('$', FORMAT(quantity * price, 2)) AS formatted_total FROM order_items;"
+  },
+  {
+    "question": "List orders with customer details and show order_date in 'MM/DD/YYYY' format.",
+    "label": "SELECT o.order_id, o.total_amount, DATE_FORMAT(o.order_date, '%m/%d/%Y') AS formatted_date, c.first_name, c.last_name FROM orders o JOIN customers c ON o.customer_id = c.customer_id;"
+  },
+  {
+    "question": "Display customers along with their address details by concatenating city and state.",
+    "label": "SELECT c.customer_id, c.first_name, c.last_name, CONCAT(a.city, ', ', a.state) AS location FROM customers c JOIN addresses a ON c.address_id = a.address_id;"
+  },
+  {
+    "question": "Classify orders as 'Low', 'Medium', or 'High' based on total_amount thresholds of 50 and 300.",
+    "label": "SELECT order_id, total_amount, CASE WHEN total_amount < 50 THEN 'Low' WHEN total_amount BETWEEN 50 AND 300 THEN 'Medium' ELSE 'High' END AS order_class FROM orders;"
+  },
+  {
+    "question": "Find customers who placed orders on weekdays only.",
+    "label": "SELECT DISTINCT c.* FROM customers c JOIN orders o ON c.customer_id = o.customer_id WHERE DAYOFWEEK(o.order_date) BETWEEN 2 AND 6;"
+  },
+  {
+    "question": "Calculate the average increased price of order items if prices were increased by 10%.",
+    "label": "SELECT AVG(price * 1.1) AS avg_increased_price FROM order_items;"
+  },
+  {
+    "question": "Display customers whose email addresses end with 'edu'.",
+    "label": "SELECT * FROM customers WHERE email LIKE '%edu';"
+  },
+  {
+    "question": "List orders with a flag 'Valid' if total_amount is non-negative.",
+    "label": "SELECT order_id, total_amount, CASE WHEN total_amount >= 0 THEN 'Valid' ELSE 'Invalid' END AS validity FROM orders;"
+  },
+  {
+    "question": "Find the median total_amount of orders.",
+    "label": "SELECT PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY total_amount) AS median_total FROM orders;"
+  },
+  {
+    "question": "For order items, compare quantity and price to indicate 'Quantity Higher' or 'Price Higher'.",
+    "label": "SELECT order_item_id, quantity, price, CASE WHEN quantity > price THEN 'Quantity Higher' ELSE 'Price Higher' END AS comparison FROM order_items;"
+  },
+  {
+    "question": "Display customers whose first name starts with 'A' and last name starts with 'B'.",
+    "label": "SELECT * FROM customers WHERE first_name LIKE 'A%' AND last_name LIKE 'B%';"
+  },
+  {
+    "question": "Find orders for the customer with phone number '123-456-7890'.",
+    "label": "SELECT o.* FROM orders o JOIN customers c ON o.customer_id = c.customer_id WHERE c.phone_number = '123-456-7890';"
+  },
+  {
+    "question": "Show addresses where the street contains 'Boulevard'.",
+    "label": "SELECT * FROM addresses WHERE street LIKE '%Boulevard%';"
+  },
+  {
+    "question": "Find orders whose total_amount is a multiple of 100.",
+    "label": "SELECT * FROM orders WHERE MOD(total_amount, 100) = 0;"
+  },
+  {
+    "question": "Display customers along with their email addresses in uppercase.",
+    "label": "SELECT customer_id, UPPER(email) AS email_upper FROM customers;"
+  },
+  {
+    "question": "Show orders with a flag indicating if the order_date is in the past or future relative to today.",
+    "label": "SELECT order_id, order_date, CASE WHEN order_date < CURDATE() THEN 'Past' ELSE 'Future' END AS time_status FROM orders;"
+  },
+  {
+    "question": "For each order item, indicate whether its price is above or below the average price of its product.",
+    "label": "SELECT order_item_id, product_id, price, price - (SELECT AVG(price) FROM order_items WHERE product_id = order_items.product_id) AS deviation FROM order_items;"
+  },
+  {
+    "question": "Display customers with a reversed version of their last names.",
+    "label": "SELECT customer_id, REVERSE(last_name) AS reversed_last_name FROM customers;"
+  },
+  {
+    "question": "For each order, show the total number of orders placed by the same customer.",
+    "label": "SELECT o.order_id, o.customer_id, o.total_amount, (SELECT COUNT(*) FROM orders WHERE customer_id = o.customer_id) AS customer_order_count FROM orders o;"
+  },
+  {
+    "question": "Show addresses with a computed numeric zip_code (casting zip_code to a number).",
+    "label": "SELECT address_id, zip_code, CAST(zip_code AS UNSIGNED) AS numeric_zip FROM addresses;"
+  },
+  {
+    "question": "For order items, calculate the cost per unit.",
+    "label": "SELECT order_item_id, CASE WHEN quantity = 0 THEN 0 ELSE price/quantity END AS cost_per_unit FROM order_items;"
+  },
+  {
+    "question": "Display customers along with a concatenated full contact info (first name, last name, and email).",
+    "label": "SELECT customer_id, CONCAT(first_name, ' ', last_name, ' - ', email) AS contact_info FROM customers;"
+  },
+  {
+    "question": "Show orders with order_date converted to a Unix timestamp.",
+    "label": "SELECT order_id, order_date, UNIX_TIMESTAMP(order_date) AS order_timestamp FROM orders;"
+  },
+  {
+    "question": "For order items, apply a 10% discount if quantity is greater than 5 and show the final total.",
+    "label": "SELECT order_item_id, quantity, price, CASE WHEN quantity > 5 THEN quantity * price * 0.90 ELSE quantity * price END AS discounted_total FROM order_items;"
+  },
+  {
+    "question": "Display customers along with the count of orders they placed and their average order total.",
+    "label": "SELECT c.customer_id, c.first_name, c.last_name, COUNT(o.order_id) AS order_count, AVG(o.total_amount) AS avg_total FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id;"
+  },
+  {
+    "question": "List orders with the percentage of total_amount relative to the maximum order total.",
+    "label": "SELECT order_id, total_amount, (total_amount / (SELECT MAX(total_amount) FROM orders)) * 100 AS percentage_of_max FROM orders;"
+  },
+  {
+    "question": "For order items, flag each item as 'Bulk' if quantity is 20 or more, otherwise 'Standard'.",
+    "label": "SELECT order_item_id, quantity, CASE WHEN quantity >= 20 THEN 'Bulk' ELSE 'Standard' END AS order_type FROM order_items;"
+  },
+  {
+    "question": "Display customers with the count of distinct orders they have placed.",
+    "label": "SELECT c.customer_id, COUNT(DISTINCT o.order_id) AS distinct_orders FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id;"
+  },
+  {
+    "question": "For each order, show the average price of its order items.",
+    "label": "SELECT o.order_id, (SELECT AVG(oi.price) FROM order_items oi WHERE oi.order_id = o.order_id) AS avg_item_price FROM orders o;"
+  },
+  {
+    "question": "List addresses located in either 'Miami' or 'Orlando'.",
+    "label": "SELECT * FROM addresses WHERE city IN ('Miami', 'Orlando');"
+  },
+  {
+    "question": "Display customers along with their first names reversed.",
+    "label": "SELECT customer_id, REVERSE(first_name) AS reversed_first_name FROM customers;"
+  },
+  {
+    "question": "For each order, calculate a cumulative total_amount per customer up to that order date.",
+    "label": "SELECT o.order_id, o.customer_id, o.total_amount, (SELECT SUM(o2.total_amount) FROM orders o2 WHERE o2.customer_id = o.customer_id AND o2.order_date <= o.order_date) AS cumulative_total FROM orders o;"
+  },
+  {
+    "question": "For order items, compute the total cost per product across all orders.",
+    "label": "SELECT product_id, SUM(quantity * price) AS total_cost FROM order_items GROUP BY product_id;"
+  },
+  {
+    "question": "Display customers with first names starting with 'S' and ending with 'a'.",
+    "label": "SELECT * FROM customers WHERE first_name LIKE 'S%a';"
+  },
+  {
+    "question": "Find orders placed in the first half of 2023.",
+    "label": "SELECT * FROM orders WHERE YEAR(order_date) = 2023 AND MONTH(order_date) <= 6;"
+  },
+  {
+    "question": "List addresses with zip codes exactly 5 characters long.",
+    "label": "SELECT * FROM addresses WHERE LENGTH(zip_code) = 5;"
+  },
+  {
+    "question": "For order items, calculate the discounted price at 5% off if the price exceeds 50.",
+    "label": "SELECT order_item_id, price, CASE WHEN price > 50 THEN price * 0.95 ELSE price END AS discounted_price FROM order_items;"
+  },
+  {
+    "question": "Display customers with orders by showing customer details and order total side by side.",
+    "label": "SELECT c.customer_id, c.first_name, c.last_name, o.total_amount FROM customers c JOIN orders o ON c.customer_id = o.customer_id;"
+  },
+  {
+    "question": "List orders with order_date formatted as 'Day, DD Month YYYY'.",
+    "label": "SELECT order_id, DATE_FORMAT(order_date, '%W, %d %M %Y') AS formatted_date FROM orders;"
+  },
+  {
+    "question": "For order items, display the total cost and sort the items in descending order of cost.",
+    "label": "SELECT order_item_id, quantity * price AS total_cost FROM order_items ORDER BY total_cost DESC;"
+  },
+  {
+    "question": "Find the maximum quantity ordered in a single order item.",
+    "label": "SELECT MAX(quantity) FROM order_items;"
+  },
+  {
+    "question": "Display customers who have placed orders with an average total_amount above 200.",
+    "label": "SELECT c.customer_id, c.first_name, c.last_name FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id HAVING AVG(o.total_amount) > 200;"
+  },
+  {
+    "question": "For each order, show the average price per item computed from its order items.",
+    "label": "SELECT o.order_id, (SELECT AVG(oi.price) FROM order_items oi WHERE oi.order_id = o.order_id) AS avg_item_price FROM orders o;"
+  },
+  {
+    "question": "Display customers who have placed orders in the last 30 days.",
+    "label": "SELECT DISTINCT c.* FROM customers c JOIN orders o ON c.customer_id = o.customer_id WHERE o.order_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY);"
+  },
+  {
+    "question": "List addresses that have a country_id of 'US'.",
+    "label": "SELECT * FROM addresses WHERE country_id = 'US';"
+  },
+  {
+    "question": "Find orders that were placed in December.",
+    "label": "SELECT * FROM orders WHERE MONTH(order_date) = 12;"
+  },
+  {
+    "question": "Display customers whose first names are longer than 5 characters.",
+    "label": "SELECT * FROM customers WHERE LENGTH(first_name) > 5;"
+  },
+  {
+    "question": "List orders with a computed column indicating the order year.",
+    "label": "SELECT order_id, YEAR(order_date) AS order_year FROM orders;"
+  },
+  {
+    "question": "For order items, display those with prices between 10 and 50.",
+    "label": "SELECT * FROM order_items WHERE price BETWEEN 10 AND 50;"
+  },
+  {
+    "question": "List customers whose email addresses do not contain 'noreply'.",
+    "label": "SELECT * FROM customers WHERE email NOT LIKE '%noreply%';"
+  },
+  {
+    "question": "Show the count of orders for each customer, grouped by customer_id.",
+    "label": "SELECT c.customer_id, COUNT(o.order_id) AS order_count FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id;"
+  },
+  {
+    "question": "For order items, compute the total revenue from all items.",
+    "label": "SELECT SUM(quantity * price) AS total_revenue FROM order_items;"
+  },
+  {
+    "question": "List orders with customer details and address city.",
+    "label": "SELECT o.order_id, c.first_name, c.last_name, a.city FROM orders o JOIN customers c ON o.customer_id = c.customer_id JOIN addresses a ON c.address_id = a.address_id;"
+  },
+  {
+    "question": "Find orders for customers with the last name 'Smith'.",
+    "label": "SELECT o.* FROM orders o JOIN customers c ON o.customer_id = c.customer_id WHERE c.last_name = 'Smith';"
+  },
+  {
+    "question": "Display customers whose first name is 'Emily'.",
+    "label": "SELECT * FROM customers WHERE first_name = 'Emily';"
+  },
+  {
+    "question": "List orders placed in Q1 of 2023.",
+    "label": "SELECT * FROM orders WHERE MONTH(order_date) IN (1,2,3) AND YEAR(order_date) = 2023;"
+  },
+  {
+    "question": "For order items, list those with a price greater than 100.",
+    "label": "SELECT * FROM order_items WHERE price > 100;"
+  },
+  {
+    "question": "Find orders that include at least one order item with quantity over 10.",
+    "label": "SELECT DISTINCT o.* FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE oi.quantity > 10;"
+  },
+  {
+    "question": "Display orders that have been updated in the last 7 days.",
+    "label": "SELECT * FROM orders WHERE order_date >= DATE_SUB(CURDATE(), INTERVAL 7 DAY);"
+  },
+  {
+    "question": "List customers sorted by their email addresses in alphabetical order.",
+    "label": "SELECT * FROM customers ORDER BY email ASC;"
+  },
+  {
+    "question": "Find orders for customers in the state 'TX'.",
+    "label": "SELECT o.* FROM orders o JOIN customers c ON o.customer_id = c.customer_id JOIN addresses a ON c.address_id = a.address_id WHERE a.state = 'TX';"
+  },
+  {
+    "question": "Display customers whose phone numbers contain the sequence '123'.",
+    "label": "SELECT * FROM customers WHERE phone_number LIKE '%123%';"
+  },
+  {
+    "question": "List addresses where the street name contains 'Ave'.",
+    "label": "SELECT * FROM addresses WHERE street LIKE '%Ave%';"
+  },
+  {
+    "question": "Find orders where total_amount is above the 90th percentile.",
+    "label": "SELECT * FROM orders WHERE total_amount > (SELECT PERCENTILE_CONT(0.9) WITHIN GROUP (ORDER BY total_amount) FROM orders);"
+  },
+  {
+    "question": "List order items with order_item_id greater than 500.",
+    "label": "SELECT * FROM order_items WHERE order_item_id > 500;"
+  },
+  {
+    "question": "Calculate the average quantity of items per order.",
+    "label": "SELECT order_id, AVG(quantity) AS avg_quantity FROM order_items GROUP BY order_id;"
+  },
+  {
+    "question": "Display orders with a custom alias 'OrderTotal' for total_amount.",
+    "label": "SELECT order_id, total_amount AS OrderTotal FROM orders;"
+  },
+  {
+    "question": "List customers along with the length of their email addresses.",
+    "label": "SELECT customer_id, first_name, last_name, LENGTH(email) AS email_length FROM customers;"
+  },
+  {
+    "question": "Find the customer with the shortest email address.",
+    "label": "SELECT * FROM customers ORDER BY LENGTH(email) ASC LIMIT 1;"
+  },
+  {
+    "question": "For each customer, show the sum of total_amount from their orders.",
+    "label": "SELECT customer_id, SUM(total_amount) AS total_spent FROM orders GROUP BY customer_id;"
+  },
+  {
+    "question": "Find orders with order_date formatted as 'YYYY-MM-DD'.",
+    "label": "SELECT order_id, DATE_FORMAT(order_date, '%Y-%m-%d') AS formatted_date FROM orders;"
+  },
+  {
+    "question": "Find orders where the day of the month equals 15.",
+    "label": "SELECT * FROM orders WHERE DAY(order_date) = 15;"
+  },
+  {
+    "question": "Display customers with addresses in the city 'San Francisco'.",
+    "label": "SELECT c.*, a.city FROM customers c JOIN addresses a ON c.address_id = a.address_id WHERE a.city = 'San Francisco';"
+  },
+  {
+    "question": "Show orders along with a computed tax column (5% of total_amount).",
+    "label": "SELECT order_id, total_amount, total_amount * 0.05 AS tax FROM orders;"
+  },
+  {
+    "question": "For order items, display total cost rounded to 2 decimals.",
+    "label": "SELECT order_item_id, ROUND(quantity * price, 2) AS total_cost FROM order_items;"
+  },
+  {
+    "question": "List orders with status 'shipped'.",
+    "label": "SELECT * FROM orders WHERE status = 'shipped';"
+  },
+  {
+    "question": "Display customers along with the count of orders they have placed.",
+    "label": "SELECT c.customer_id, c.first_name, c.last_name, COUNT(o.order_id) AS order_count FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id;"
+  },
+  {
+    "question": "Show addresses with columns address_id, street, city, state, and country_id.",
+    "label": "SELECT address_id, street, city, state, country_id FROM addresses;"
+  },
+  {
+    "question": "Find orders where total_amount is less than 50.",
+    "label": "SELECT * FROM orders WHERE total_amount < 50;"
+  },
+  {
+    "question": "Display orders with the month number extracted from order_date.",
+    "label": "SELECT order_id, MONTH(order_date) AS order_month FROM orders;"
+  },
+  {
+    "question": "List order items where quantity equals 1.",
+    "label": "SELECT * FROM order_items WHERE quantity = 1;"
+  },
+  {
+    "question": "Display customers with missing phone numbers.",
+    "label": "SELECT * FROM customers WHERE phone_number IS NULL;"
+  },
+  {
+    "question": "Show orders where order_date is not null.",
+    "label": "SELECT * FROM orders WHERE order_date IS NOT NULL;"
+  },
+  {
+    "question": "List customers with their first names converted to uppercase.",
+    "label": "SELECT customer_id, UPPER(first_name) AS first_name_upper FROM customers;"
+  },
+  {
+    "question": "List addresses with city names converted to lowercase.",
+    "label": "SELECT address_id, LOWER(city) AS city_lower FROM addresses;"
+  },
+  {
+    "question": "Find the total number of customers in each state.",
+    "label": "SELECT a.state, COUNT(*) AS customer_count FROM addresses a JOIN customers c ON a.address_id = c.address_id GROUP BY a.state;"
+  },
+  {
+    "question": "Display orders with the week number of order_date.",
+    "label": "SELECT order_id, WEEK(order_date) AS week_number FROM orders;"
+  },
+  {
+    "question": "For order items, flag each item as 'HighQuantity' if quantity > 10.",
+    "label": "SELECT order_item_id, quantity, CASE WHEN quantity > 10 THEN 'HighQuantity' ELSE 'Normal' END AS quantity_flag FROM order_items;"
+  },
+  {
+    "question": "Find orders where total_amount is greater than twice the average total_amount.",
+    "label": "SELECT * FROM orders WHERE total_amount > 2 * (SELECT AVG(total_amount) FROM orders);"
+  },
+  {
+    "question": "Display orders with a random flag 'Promo' or 'Regular'.",
+    "label": "SELECT order_id, CASE WHEN RAND() < 0.5 THEN 'Promo' ELSE 'Regular' END AS promo_flag FROM orders;"
+  },
+  {
+    "question": "For each order item, compute the cumulative total cost within its order.",
+    "label": "SELECT oi.order_item_id, oi.order_id, (SELECT SUM(oi2.quantity * oi2.price) FROM order_items oi2 WHERE oi2.order_id = oi.order_id AND oi2.order_item_id <= oi.order_item_id) AS cumulative_total FROM order_items oi;"
+  },
+  {
+    "question": "Display customers with the first three characters of their email domain.",
+    "label": "SELECT customer_id, SUBSTRING(SUBSTRING_INDEX(email, '@', -1), 1, 3) AS domain_prefix FROM customers;"
+  },
+  {
+    "question": "For each order, show the number of days between it and the previous order of the same customer.",
+    "label": "SELECT o1.order_id, o1.customer_id, DATEDIFF(o1.order_date, (SELECT MAX(o2.order_date) FROM orders o2 WHERE o2.customer_id = o1.customer_id AND o2.order_date < o1.order_date)) AS days_since_previous FROM orders o1;"
+  },
+  {
+    "question": "For each customer, count the number of their orders that exceed the overall average order total.",
+    "label": "SELECT c.customer_id, (SELECT COUNT(*) FROM orders o WHERE o.customer_id = c.customer_id AND o.total_amount > (SELECT AVG(total_amount) FROM orders)) AS high_value_order_count FROM customers c;"
+  },
+  {
+    "question": "Display orders with a computed column showing days until their anniversary (based on order_date).",
+    "label": "SELECT order_id, order_date, DATEDIFF(STR_TO_DATE(CONCAT(YEAR(CURDATE()), '-', DATE_FORMAT(order_date, '%m-%d')), '%Y-%m-%d'), CURDATE()) AS days_until_anniversary FROM orders;"
+  },
+  {
+    "question": "For each order item, show the average price for that product across all order items.",
+    "label": "SELECT oi.order_item_id, oi.product_id, oi.price, (SELECT AVG(price) FROM order_items WHERE product_id = oi.product_id) AS avg_product_price FROM order_items oi;"
+  },
+  {
+    "question": "Display customers with the first letter of their first and last names.",
+    "label": "SELECT customer_id, LEFT(first_name, 1) AS first_initial, LEFT(last_name, 1) AS last_initial FROM customers;"
+  },
+  {
+    "question": "Display orders with the quarter in which they were placed.",
+    "label": "SELECT order_id, QUARTER(order_date) AS order_quarter FROM orders;"
+  },
+  {
+    "question": "For each address, show the full location as 'city, state, zip_code'.",
+    "label": "SELECT address_id, CONCAT(city, ', ', state, ', ', zip_code) AS full_location FROM addresses;"
+  },
+  {
+    "question": "Display order items with total cost in USD, prefixed with a dollar sign.",
+    "label": "SELECT order_item_id, CONCAT('$', FORMAT(quantity * price, 2)) AS total_cost_usd FROM order_items;"
+  },
+  {
+    "question": "List orders with email addresses in uppercase if the customer is associated with the order.",
+    "label": "SELECT o.order_id, UPPER(c.email) AS email_upper FROM orders o JOIN customers c ON o.customer_id = c.customer_id;"
+  },
+  {
+    "question": "Display orders with a computed column for a random number between 1 and 100.",
+    "label": "SELECT order_id, FLOOR(1 + (RAND() * 100)) AS random_value FROM orders;"
+  },
+  {
+    "question": "Display orders with the difference in days between the order_date and '2023-01-01'.",
+    "label": "SELECT order_id, DATEDIFF(order_date, '2023-01-01') AS days_from_2023_start FROM orders;"
+  },
+  {
+    "question": "For each product in order items, calculate the standard deviation of its prices.",
+    "label": "SELECT product_id, STD(price) AS price_std FROM order_items GROUP BY product_id;"
+  },
+  {
+    "question": "Display addresses with the city name converted to title case.",
+    "label": "SELECT address_id, CONCAT(UPPER(LEFT(city,1)), LOWER(SUBSTRING(city,2))) AS title_city FROM addresses;"
+  },
+  {
+    "question": "List orders with a computed column indicating if the order_date is a weekend or a weekday.",
+    "label": "SELECT order_id, order_date, CASE WHEN DAYOFWEEK(order_date) IN (1,7) THEN 'Weekend' ELSE 'Weekday' END AS day_type FROM orders;"
+  },
+  {
+    "question": "Display order items with the difference between their price and the average price for that product.",
+    "label": "SELECT order_item_id, price - (SELECT AVG(price) FROM order_items WHERE product_id = order_items.product_id) AS price_variance FROM order_items;"
+  },
+  {
+    "question": "Display customers with the reversed version of their email addresses.",
+    "label": "SELECT customer_id, REVERSE(email) AS reversed_email FROM customers;"
+  },
+  {
+    "question": "Display orders with a computed column showing the numeric zip code from the associated address.",
+    "label": "SELECT o.order_id, CAST(a.zip_code AS UNSIGNED) AS numeric_zip FROM orders o JOIN customers c ON o.customer_id = c.customer_id JOIN addresses a ON c.address_id = a.address_id;"
+  },
+  {
+    "question": "Display order items with the percentage contribution of each item's cost to its order's total cost.",
+    "label": "SELECT oi.order_item_id, oi.order_id, (quantity * price) / (SELECT SUM(quantity * price) FROM order_items WHERE order_id = oi.order_id) * 100 AS contribution_percentage FROM order_items oi;"
+  },
+  {
+    "question": "Display customers with the count of orders they placed and sort them by this count in descending order.",
+    "label": "SELECT c.customer_id, COUNT(o.order_id) AS order_count FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id ORDER BY order_count DESC;"
+  },
+  {
+    "question": "For orders, display the day of week in abbreviated form (e.g., 'Mon', 'Tue').",
+    "label": "SELECT order_id, DATE_FORMAT(order_date, '%a') AS abbreviated_day FROM orders;"
+  },
+  {
+    "question": "For order items, calculate the discounted line total if a 5% discount applies when the line total exceeds 200.",
+    "label": "SELECT order_item_id, quantity * price AS line_total, CASE WHEN (quantity * price) > 200 THEN (quantity * price) * 0.95 ELSE (quantity * price) END AS discounted_line_total FROM order_items;"
+  },
+  {
+    "question": "Display customers with the email domain in uppercase.",
+    "label": "SELECT customer_id, UPPER(SUBSTRING_INDEX(email, '@', -1)) AS email_domain FROM customers;"
+  },
+  {
+    "question": "List orders with a computed column showing days since the order was placed, rounded to the nearest integer.",
+    "label": "SELECT order_id, ROUND(DATEDIFF(CURDATE(), order_date), 0) AS days_since_order FROM orders;"
+  },
+  {
+    "question": "For order items, calculate the ratio of quantity to price formatted to two decimals (skip division by zero).",
+    "label": "SELECT order_item_id, ROUND(quantity/price, 2) AS quantity_price_ratio FROM order_items WHERE price <> 0;"
+  },
+  {
+    "question": "Display addresses with a shortened street name (first 10 characters).",
+    "label": "SELECT address_id, LEFT(street, 10) AS short_street FROM addresses;"
+  },
+  {
+    "question": "Display customers with the total number of characters in their email addresses.",
+    "label": "SELECT customer_id, LENGTH(email) AS email_length FROM customers;"
+  },
+  {
+    "question": "List orders with the month number extracted from order_date.",
+    "label": "SELECT order_id, MONTH(order_date) AS month_number FROM orders;"
+  },
+  {
+    "question": "For each order item, calculate the contribution percentage of its cost to the order's total cost.",
+    "label": "SELECT oi.order_item_id, oi.order_id, (quantity * price) / (SELECT SUM(quantity * price) FROM order_items WHERE order_id = oi.order_id) * 100 AS contribution_percentage FROM order_items oi;"
+  },
+  {
+    "question": "Display customers with the first three characters of their email domain.",
+    "label": "SELECT customer_id, SUBSTRING(SUBSTRING_INDEX(email, '@', -1), 1, 3) AS domain_prefix FROM customers;"
+  },
+  {
+    "question": "For each order, show the number of days until its anniversary (based on month and day of order_date).",
+    "label": "SELECT order_id, order_date, DATEDIFF(STR_TO_DATE(CONCAT(YEAR(CURDATE()), '-', DATE_FORMAT(order_date, '%m-%d')), '%Y-%m-%d'), CURDATE()) AS days_until_anniversary FROM orders;"
+  },
+  {
+    "question": "Display orders with the day number of the order_date.",
+    "label": "SELECT order_id, DAY(order_date) AS day_number FROM orders;"
+  },
+  {
+    "question": "Display addresses with a computed column for state abbreviation (first two letters).",
+    "label": "SELECT address_id, state, LEFT(state, 2) AS state_abbr FROM addresses;"
+  },
+  {
+    "question": "For each order, show the daily order frequency (number of orders on the same day).",
+    "label": "SELECT o1.order_id, (SELECT COUNT(*) FROM orders o2 WHERE DATE(o2.order_date) = DATE(o1.order_date)) AS daily_order_count FROM orders o1;"
+  },
+  {
+    "question": "For order items, calculate the price after applying an 8% tax rate.",
+    "label": "SELECT order_item_id, price, price * 1.08 AS price_after_tax FROM order_items;"
+  },
+  {
+    "question": "Display customers with a flag indicating if their email domain is 'gmail.com'.",
+    "label": "SELECT customer_id, email, CASE WHEN SUBSTRING_INDEX(email, '@', -1) = 'gmail.com' THEN 'Yes' ELSE 'No' END AS is_gmail FROM customers;"
+  },
+  {
+    "question": "For each order, count how many of the customer's orders are 'completed'.",
+    "label": "SELECT o.order_id, o.customer_id, (SELECT COUNT(*) FROM orders o2 WHERE o2.customer_id = o.customer_id AND o2.status = 'completed') AS completed_orders FROM orders o;"
+  },
+  {
+    "question": "Display order items where the total cost equals exactly 100.",
+    "label": "SELECT * FROM order_items WHERE (quantity * price) = 100;"
+  },
+  {
+    "question": "Display customers with reversed email addresses.",
+    "label": "SELECT customer_id, REVERSE(email) AS reversed_email FROM customers;"
+  },
+  {
+    "question": "Show orders with order_date in long format (e.g., 'July 4, 2023').",
+    "label": "SELECT order_id, DATE_FORMAT(order_date, '%M %e, %Y') AS long_date FROM orders;"
+  },
+  {
+    "question": "For order items, display those with a total cost of at least 20.",
+    "label": "SELECT * FROM order_items WHERE (quantity * price) >= 20;"
+  },
+  {
+    "question": "Display addresses with the full address including street, city, state, and zip_code.",
+    "label": "SELECT address_id, CONCAT(street, ', ', city, ', ', state, ', ', zip_code) AS full_address FROM addresses;"
+  },
+  {
+    "question": "Display orders with a random computed flag indicating 'Promo' or 'Regular'.",
+    "label": "SELECT order_id, CASE WHEN RAND() < 0.5 THEN 'Promo' ELSE 'Regular' END AS random_flag FROM orders;"
+  },
+  {
+    "question": "For order items, calculate the cost ratio relative to the maximum cost in the same order.",
+    "label": "SELECT oi.order_item_id, oi.order_id, (quantity * price) / (SELECT MAX(quantity * price) FROM order_items WHERE order_id = oi.order_id) AS cost_ratio FROM order_items oi;"
+  },
+  {
+    "question": "Display orders with the average order value for each customer.",
+    "label": "SELECT c.customer_id, AVG(o.total_amount) AS avg_order_value FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.customer_id;"
+  },
+  {
+    "question": "Display orders with a computed column combining week number and day name (e.g., 'Week 32 - Mon').",
+    "label": "SELECT order_id, CONCAT('Week ', WEEK(order_date), ' - ', DAYNAME(order_date)) AS week_day FROM orders;"
+  },
+  {
+    "question": "For order items, compute the final total with a 10% discount if quantity is over 15.",
+    "label": "SELECT order_item_id, quantity, price, CASE WHEN quantity > 15 THEN quantity * price * 0.90 ELSE quantity * price END AS final_total FROM order_items;"
+  },
+  {
+    "question": "Display customers with the email domain extracted and converted to lowercase.",
+    "label": "SELECT customer_id, LOWER(SUBSTRING_INDEX(email, '@', -1)) AS email_domain FROM customers;"
+  }
+]
